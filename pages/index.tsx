@@ -24,7 +24,7 @@ export default function Home({ starships }: IData) {
     setValidationError('');
 
     if(isNaN(Number(mglt))){
-      setValidationError('Coloque um valor válido!');
+      setValidationError('Invalid number!');
     } else{
       const formatStarshipsArray = starshipsState.map(starship => {
         return {...starship, result: calcStops(starship.consumables, Number(starship.MGLT), Number(mglt))}
