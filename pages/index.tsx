@@ -28,7 +28,7 @@ export default function Home({ starships }: IData) {
     } else{
       const formatStarshipsArray = starshipsState.map(starship => {
         return {...starship, result: calcStops(starship.consumables, Number(starship.MGLT), Number(mglt))}
-      });
+      }).sort((a, b) => b.result - a.result);
   
       setStarshipsState(formatStarshipsArray);
     }
